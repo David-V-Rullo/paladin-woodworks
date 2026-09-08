@@ -1,0 +1,5 @@
+import type {Metadata} from 'next';
+import Link from 'next/link';
+import {ProjectCards,SiteFooter} from '@/components/portfolio-content';
+export const metadata:Metadata={title:'Portfolio | Paladin Woodworks',description:'Explore the boxes, cabinetry, and developing projects at Paladin Woodworks.'};
+export default function Portfolio(){return <main className="public-page"><section className="page-heading"><p className="eyebrow">THE PORTFOLIO</p><h1>From the workbench.</h1><p className="lead">Boxes, cabinetry, and projects in progress. A growing record of the work and the details behind it.</p><p className="draft-note">The collection is getting started. Images are placeholders; each project’s current stage is shown below.</p></section><ProjectCards/><div className="page-close"><div><p className="eyebrow">MAKE IT YOUR OWN</p><h2>Start with a watch box.</h2><p>Try different dimensions and construction options in the planner.</p></div><Link className="button-link primary" href="/planner">Open the planner</Link></div><SiteFooter/></main>}
