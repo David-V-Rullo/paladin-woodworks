@@ -35,12 +35,14 @@ Core calculations: `lib/woodworking.ts`. Model rendering: `app/model.tsx` and `l
 
 ## Cabinet builder
 
-The frameless plywood cabinet builder adds 0–6 equally spaced fixed shelves, through-dado or butt shelf joints, an applied back, a rotatable/exploded model, finished CSV, print output, and separate cabinet JSON import/export and local save. Overall depth includes back thickness. Top/bottom butt between full-height sides; through dados are visible at front edges. Cut-list lengths include dado engagement. Doors, hardware, face frames, mounting and load calculations are not included.
+The cabinet builder supports one to six side-by-side cases with individual widths and shared height, depth, material and construction. Options include fixed shelves, shelf dados, separate flush face frames, single or paired inset/overlay plywood slab doors, and wall-hung or floor-standing installation. Floor mode includes a separate recessed plinth per cabinet. Case height excludes the plinth; case depth includes the applied back but excludes frame/overlay doors. Overall dimensions include those additions. Adjacent frames retain both stiles; there are no shared stiles, wall fillers or installation gaps.
 
-Calculations: `lib/cabinet.ts`. Geometry: `components/cabinet-model.tsx`. UI: `app/planner/cabinet/page.tsx`.
+The model, per-cabinet front summaries, CSV and printed cut list use the same run calculations. Old single-cabinet JSON files migrate to one open wall-hung case without changing cut dimensions. Hardware, swing clearances, mounting systems, countertops and load calculations are not included. The applied back is not specified as a mounting system.
+
+Calculations: `lib/cabinet.ts` and `lib/cabinet-run.ts`. Geometry: `components/cabinet-model.tsx`. UI: `app/planner/cabinet/page.tsx`.
 
 Run dimension regression checks with Node.js 22.13+:
 
 ```sh
-node --experimental-strip-types --test tests/cabinet.test.mjs
+node --experimental-strip-types --test tests/*.test.mjs
 ```

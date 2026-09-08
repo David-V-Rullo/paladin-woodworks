@@ -1,3 +1,3 @@
 import type {Metadata} from 'next';
-export const metadata:Metadata={title:'Cabinet Builder | Paladin Woodworks',description:'Plan a plywood cabinet with fixed shelves, shelf dados, a live assembly and downloadable cut list.'};
+export const metadata:Metadata={title:'Cabinet Run Builder | Paladin Woodworks',description:'Plan cabinet runs with individual widths, face frames, inset or overlay doors, floor bases and detailed cut lists.'};
 export default function Layout({children}:{children:React.ReactNode}){return children;}
